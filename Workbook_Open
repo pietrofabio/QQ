@@ -1,0 +1,12 @@
+Private Sub Workbook_Open()
+
+
+On Error Resume Next
+If Tabelle5.Visible = False Then Tabelle5.Visible = True
+Application.GoTo Reference:=Tabelle5.Range("O2"), Scroll:=True
+If Tabelle5.Visible = True Then Tabelle5.Visible = False
+On Error GoTo 0
+
+Tabelle5.Protect Password:="Hhotels*2021", UserInterfaceOnly:=True
+
+End Sub
