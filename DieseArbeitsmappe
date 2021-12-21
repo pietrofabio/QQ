@@ -1,0 +1,53 @@
+Private Sub Workbook_Open()
+
+
+On Error Resume Next
+If Tabelle5.Visible = False Then Tabelle5.Visible = True
+Application.GoTo Reference:=Tabelle5.Range("O2"), Scroll:=True
+If Tabelle5.Visible = True Then Tabelle5.Visible = False
+On Error GoTo 0
+
+Tabelle5.Protect Password:="Hhotels*2021", UserInterfaceOnly:=True
+
+End Sub
+
+'Private Sub Workbook_OpenXXX()
+'
+'Dim varFile     As Variant
+'Dim intLastRow  As Integer
+'Dim intMsgBox   As Integer
+'Dim lo          As ListObject
+'
+'Application.ScreenUpdating = False
+'Application.DisplayAlerts = False
+'Application.Calculation = xlCalculationAutomatic
+'
+'Tabelle4.ListObjects("FOR_006_XML").Resize Range("A1:D732")
+''intResult = ThisWorkbook.XmlMaps("FOR_006_XML").Import(Application.GetOpenFilename("XML Files (*.xml), *.xml", , "XML Datei FOR_006 auswählen"))
+'
+''Muss man den Pfad überschreiben!!!!
+'intResult = ThisWorkbook.XmlMaps("FOR_006_XML").Import("C:\Users\peter.fabian\Documents\Strategy Sheet\history_forecast139096574.xml")
+'
+'If intResult <> 0 Then
+''    Call InputErrorHandler.EH_FOR_006_XML
+'Else
+'End If
+'
+'If intError = 1 Then
+'        MsgBox "Es wurde drei Mal nicht die korrekte XML Datei ausgewählt." & Chr(10) & _
+'        "Bitte kontaktieren Sie die Analyse Abteilung." _
+'        & Chr(10) & "Fehlercode: 'FOR_006_XML'", vbOKOnly, "Hinweis"
+'        intError = 0
+'        Application.DisplayAlerts = True
+'        Application.ScreenUpdating = True
+'    Exit Sub
+'Else
+'End If
+'
+'Tabelle3.PivotTables("Pivot_DEF").RefreshTable
+'
+'Application.ScreenUpdating = True
+'Application.DisplayAlerts = True
+'Application.CutCopyMode = False
+'
+'End Sub
